@@ -565,7 +565,7 @@ with tab1:
     
     # Container 03
     with st.container():
-        st.plotly_chart( countries_avg_cost_chart() )
+        st.plotly_chart( countries_avg_cost_chart(), use_container_width=True )
 
         
         
