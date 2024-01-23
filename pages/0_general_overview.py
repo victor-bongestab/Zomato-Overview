@@ -5,9 +5,9 @@ import inflection
 import streamlit as st
 from PIL import Image
 
-from streamlit_folium import folium_static
-import folium
-from folium.plugins import MarkerCluster
+#from streamlit_folium import folium_static
+#import folium
+#from folium.plugins import MarkerCluster
 
 
 # Dataset
@@ -263,20 +263,6 @@ with st.container():
         average_rating = df["aggregate_rating"].mean().round(2)
         st.metric(label='Avg Rating', value=average_rating)
         
-    
-        
-
-with st.container():
-    st.markdown("## World Map")
-    
-    locais = df[['latitude','longitude']].values.tolist()
-    popups = df[['city','restaurant_name','aggregate_rating']].values.tolist()
-
-    mapa = folium.Map()
-
-    MarkerCluster(locations=locais, popups=popups).add_to(mapa)
-
-    folium_static(mapa, width=1024, height=600)
         
         
 #with st.container():
