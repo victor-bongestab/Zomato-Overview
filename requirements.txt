@@ -1,7 +1,7 @@
 pandas==1.4.3
 inflection==0.5.1
 streamlit==1.23.1
-streamlit-folium==0.7.0
+streamlit-folium==0.11.1
 folium==0.14.0
 seaborn==0.12.2
 plotly==5.9.0
