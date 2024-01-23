@@ -281,5 +281,3 @@ with st.container():
     mapa = folium.Map(location=[center_latitude, center_longitude], zoom_start=2.4)
 
     MarkerCluster(locations=locations, popups=popups).add_to(mapa)
-
-    folium_static(mapa, width=1100, height=600)
