@@ -9,4 +9,3 @@ plotly==5.9.0
 matplotlib==3.8.0
 matplotlib-inline==0.1.6
 Pillow==9.4.0
-haversine==2.7.0
