@@ -574,7 +574,7 @@ with tab1:
 with tab2:
     # Container 01
     with st.container():
-        st.plotly_chart( cities_most_excellent_restaurants_chart() )
+        st.plotly_chart( cities_most_excellent_restaurants_chart(), use_container_width=True )
 
     
     # Container 02
