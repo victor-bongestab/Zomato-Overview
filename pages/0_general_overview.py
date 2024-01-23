@@ -5,9 +5,9 @@ import inflection
 import streamlit as st
 from PIL import Image
 
-#import folium
-#from streamlit_folium import folium_static
-#from folium.plugins import MarkerCluster
+from streamlit_folium import folium_static
+import folium
+from folium.plugins import MarkerCluster
 
 
 # Dataset
@@ -266,6 +266,19 @@ with st.container():
     
         
 
+with st.container():
+    st.markdown("## World Map")
+    
+    locais = df[['latitude','longitude']].values.tolist()
+    popups = df[['city','restaurant_name','aggregate_rating']].values.tolist()
+
+    mapa = folium.Map()
+
+    MarkerCluster(locations=locais, popups=popups).add_to(mapa)
+
+    folium_static(mapa, width=1024, height=600)
+        
+        
 #with st.container():
     # Container 02
 #    st.markdown("## World Map")
