@@ -265,11 +265,11 @@ with st.container():
         
     
         
-
+''''
 with st.container():
     # Container 02
     st.markdown("## World Map")
-
+    
     # Plot map
     center_latitude = df['latitude'].mean()
     center_longitude = df['longitude'].mean()
@@ -283,3 +283,4 @@ with st.container():
     MarkerCluster(locations=locations, popups=popups).add_to(mapa)
 
     folium_static(mapa, width=1100, height=600)
+''''
