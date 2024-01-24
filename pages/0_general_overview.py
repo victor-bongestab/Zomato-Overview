@@ -5,7 +5,7 @@ import inflection
 import streamlit as st
 from PIL import Image
 
-from streamlit_folium import folium_static, st_folium
+from streamlit_folium import folium_static
 import folium
 from folium.plugins import MarkerCluster
 
@@ -281,5 +281,4 @@ with st.container():
 
     MarkerCluster(locations=locations, popups=popups).add_to(mapa)
 
-    st_data = st_folium(mapa, use_container_width=True)
-    #folium_static(mapa, width=1000, height=600)
+    folium_static(mapa, width=1000, height=600)
