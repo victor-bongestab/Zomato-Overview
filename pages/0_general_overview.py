@@ -265,20 +265,20 @@ with st.container():
         
         
         
-#with st.container():
+with st.container():
     # Container 02
-#    st.markdown("## World Map")
+    st.markdown("## World Map")
     
     # Plot map
-#    center_latitude = df['latitude'].mean()
-#    center_longitude = df['longitude'].mean()
+    center_latitude = df['latitude'].mean()
+    center_longitude = df['longitude'].mean()
 
-#    locations = df[['latitude','longitude']].values.tolist()
-#    popups = df[['city','restaurant_name','aggregate_rating']].values.tolist()
+    locations = df[['latitude','longitude']].values.tolist()
+    popups = df[['city','restaurant_name','aggregate_rating']].values.tolist()
 
 
-#    mapa = folium.Map(location=[center_latitude, center_longitude], zoom_start=2.4)
+    mapa = folium.Map(location=[center_latitude, center_longitude], zoom_start=2.4)
 
-#    MarkerCluster(locations=locations, popups=popups).add_to(mapa)
+    MarkerCluster(locations=locations, popups=popups).add_to(mapa)
 
-#    folium_static(mapa, width=1100, height=600)
+    folium_static(mapa, width=1100, height=600)
