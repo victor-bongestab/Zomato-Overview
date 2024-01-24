@@ -281,5 +281,5 @@ with st.container():
 
     MarkerCluster(locations=locations, popups=popups).add_to(mapa)
 
-    st_folium(mapa, use_container_width=True, height=600)
+    st_data = st_folium(mapa, use_container_width=True, height=600)
     #folium_static(mapa, width=1000, height=600)
