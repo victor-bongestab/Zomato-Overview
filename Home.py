@@ -6,7 +6,7 @@ from PIL import Image
 
 
 # PAGE LAYOUT
-st.set_page_config(page_title="Home", page_icon="🟥", layout='wide')
+st.set_page_config(page_title="Zomato", page_icon='🟥', layout='wide')
 
 
 # BARRA LATERAL

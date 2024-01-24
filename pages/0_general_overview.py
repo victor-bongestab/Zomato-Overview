@@ -171,7 +171,7 @@ df = clean_code(df)
 
 
 # PAGE LAYOUT
-st.set_page_config(page_title= 'Zomato',page_icon= ":large_red_square:",layout= 'wide' )
+st.set_page_config(page_title= 'Zomato',page_icon= '🟥',layout= 'wide' )
 
 
 
