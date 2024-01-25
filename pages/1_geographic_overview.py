@@ -187,9 +187,16 @@ def countries_reg_cities_df():
                                                               .reset_index() )
     
     reg_cities = df_cities_by_country.loc[ :4 , ["country", "city"] ]
+
+    df_restaurants_by_country = ( df.loc[ : , ["country", "restaurant_id"] ].groupby( ["country"] ).nunique()
+                                                                            .sort_values("restaurant_id", ascending=False)
+                                                                            .reset_index() )
+
+    df_restaurants_by_country.columns = [ "country", "restaurant_amount" ]
     
+    countries_reg_cities_df = pd.merge( reg_cities, df_restaurants_by_country, on='country', how='left' )
     
-    return adjust_df(reg_cities)
+    return adjust_df( countries_reg_cities_df )
 
 
 
@@ -533,8 +540,8 @@ st.markdown('# Geographic Overview')
 tab1, tab2 = st.tabs(['Countries', 'Cities'])
 
 with tab1:
-    # Container 01
     with st.container():
+        # Container 01
         col1, col2 = st.columns(2)
         
         with col1:
@@ -546,8 +553,9 @@ with tab1:
             st.dataframe( countries_cuisines_df() )
 
     
-    # Container 02
+    
     with st.container():
+        # Container 02
         col1, col2 = st.columns(2)
         
         with col1:
@@ -563,8 +571,9 @@ with tab1:
             st.plotly_chart( country_ratings_avg_chart )
     
     
-    # Container 03
+    
     with st.container():
+        # Container 03
         st.plotly_chart( countries_avg_cost_chart(), use_container_width=True )
 
         
@@ -572,13 +581,14 @@ with tab1:
         
         
 with tab2:
-    # Container 01
     with st.container():
+        # Container 01
         st.plotly_chart( cities_most_excellent_restaurants_chart(), use_container_width=True )
 
     
-    # Container 02
+    
     with st.container():
+        # Container 02
         col1, col2 = st.columns(2)
         
         with col1:
@@ -588,8 +598,9 @@ with tab2:
             st.plotly_chart( cities_delicery_chart(), use_container_width=True )
     
     
-    # Container 03
+   
     with st.container():
+        # Container 03
         col1, col2 = st.columns(2)
         
         with col1:

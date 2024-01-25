@@ -339,9 +339,8 @@ with st.container():
         st.plotly_chart( votes_restaurants_voting_chart(), use_container_width=True )
             
     with col2:
-        st.markdown('### Restaurant Ratings')
+        st.markdown('### Restaurant Ratings by Reservation')
         st.dataframe( restaurants_booking_ratings_df(), use_container_width=True )
-        
     
     
     
